@@ -3,7 +3,7 @@
 > 主語: Sugi（または委任した DS 部門担当者）
 > 期限の目安: 10〜15 分
 > 完了時の状態:
->   - https://github.com/KentaHighlow/refasta-docs-tools が Private で存在
+>   - https://github.com/KentaHighlow/refasta-docs-tools が Public で存在
 >   - main ブランチに本リポジトリの全ファイルがコミット済み
 >   - Issue/PR テンプレ・ブランチ保護・リリースフローが稼働
 
@@ -30,7 +30,7 @@ GitHub アカウント決定 → リポジトリ作成 → ローカルから pu
 |---|---|---|
 | Owner | `urlounge`（Organization）または `sugi-official` | Refasta 名義で蓄積するなら Organization 推奨 |
 | リポジトリ名 | `refasta-docs-tools` | 確定 |
-| Visibility | **Private** | 確定（Refasta 内部情報を含むため） |
+| Visibility | **Public** | 確定（社内 GitHub 普及・公式蓄積地点として外部からも参照可能に） |
 | ライセンス | MIT | 既に LICENSE 配置済み |
 
 > Organization が存在しない場合は GitHub にログイン → 右上 `+` → New organization で `urlounge`（または相当名）を作成。Refasta の商標・ドメイン情報を入れる（Org policy 4: 実在しうる法人情報の創作禁止に注意）。
@@ -57,8 +57,8 @@ git init -b main
 git add .
 git commit -m "feat: initial commit - 便利ツール by Sugi v1.0.0"
 
-# 3) Private で作成し remote を設定し push（1 行）
-gh repo create refasta-docs-tools --private --description "便利ツール by Sugi - Refasta社内向け Google ドキュメント Editor Add-on" --source . --remote origin --push
+# 3) Public で作成し remote を設定し push（1 行）
+gh repo create refasta-docs-tools --public --description "便利ツール by Sugi - Refasta社内向け Google ドキュメント Editor Add-on" --source . --remote origin --push
 
 # 4) Discussions を有効化（公式スレッド用）
 gh repo edit --enable-discussions
@@ -71,7 +71,7 @@ gh api repos/<OWNER>/refasta-docs-tools/branches/main/protection -X PUT -F requi
 
 ```bash
 gh repo create refasta-docs-tools \
-  --private \
+  --public \
   --description "便利ツール by Sugi - Refasta社内向け Google ドキュメント Editor Add-on" \
   --source . \
   --remote origin \
@@ -95,7 +95,7 @@ gh api repos/:owner/:repo/branches/main/protection \
 # 1) Web で空リポジトリを作成
 #    https://github.com/new
 #    Name: refasta-docs-tools
-#    Visibility: Private
+#    Visibility: Public
 #    "Add a README" などはチェックしない（既にローカルにあるため）
 
 # 2) ローカルから push

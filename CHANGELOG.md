@@ -21,3 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 - OAuth スコープを最小化（`documents.currentonly` / `script.container.ui` のみ）
+
+## [Unreleased]
+
+### Changed
+- リポジトリ Visibility を Private → **Public** に変更（社内 GitHub 普及と公式蓄積地点としての性格強化）
+- ドキュメント類の Visibility 表記を Public に統一

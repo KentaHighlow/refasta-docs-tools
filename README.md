@@ -2,7 +2,7 @@
 
 > 便利ツール by Sugi — Google ドキュメント用 Editor Add-on
 > Refasta（urlounge.co.jp）社内配布の公式 Add-on リポジトリ
-> Visibility: **Private**（Refasta 関係者のみ）
+> Visibility: **Public**（公式蓄積地点・社内 GitHub 普及兼用）
 
 ## 概要
 
