@@ -18,3 +18,6 @@ Thumbs.db
 # Output / scratch
 outputs/
 *.log
+
+# Claude Code 自動生成
+CLAUDE.md
