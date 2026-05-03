@@ -1,0 +1,20 @@
+# clasp / 認証情報（コミット禁止）
+.clasp.json
+.clasprc.json
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Output / scratch
+outputs/
+*.log

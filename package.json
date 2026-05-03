@@ -1,0 +1,24 @@
+{
+  "name": "refasta-docs-tools",
+  "version": "1.0.0",
+  "description": "便利ツール by Sugi - Refasta社内向け Google ドキュメント Editor Add-on",
+  "private": true,
+  "scripts": {
+    "login": "clasp login",
+    "push": "clasp push",
+    "pull": "clasp pull",
+    "open": "clasp open",
+    "deploy": "clasp deploy",
+    "versions": "clasp versions",
+    "logs": "clasp logs --watch"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2"
+  },
+  "author": "Kentaro Sugi <sugi@urlounge.co.jp>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/★OWNER★/refasta-docs-tools.git"
+  }
+}
