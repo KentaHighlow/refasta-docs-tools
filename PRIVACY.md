@@ -33,5 +33,5 @@
 
 ## 5. お問い合わせ
 
-GitHub Issues: https://github.com/★OWNER★/refasta-docs-tools/issues
+GitHub Issues: https://github.com/KentaHighlow/refasta-docs-tools/issues
 管理責任者: Kentaro Sugi（sugi@urlounge.co.jp）

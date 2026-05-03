@@ -3,7 +3,7 @@
 > 主語: Sugi（または委任した DS 部門担当者）
 > 期限の目安: 10〜15 分
 > 完了時の状態:
->   - https://github.com/★OWNER★/refasta-docs-tools が Public で存在
+>   - https://github.com/KentaHighlow/refasta-docs-tools が Private で存在
 >   - main ブランチに本リポジトリの全ファイルがコミット済み
 >   - Issue/PR テンプレ・ブランチ保護・リリースフローが稼働
 
@@ -30,7 +30,7 @@ GitHub アカウント決定 → リポジトリ作成 → ローカルから pu
 |---|---|---|
 | Owner | `urlounge`（Organization）または `sugi-official` | Refasta 名義で蓄積するなら Organization 推奨 |
 | リポジトリ名 | `refasta-docs-tools` | 確定 |
-| Visibility | Public | 確定 |
+| Visibility | **Private** | 確定（Refasta 内部情報を含むため） |
 | ライセンス | MIT | 既に LICENSE 配置済み |
 
 > Organization が存在しない場合は GitHub にログイン → 右上 `+` → New organization で `urlounge`（または相当名）を作成。Refasta の商標・ドメイン情報を入れる（Org policy 4: 実在しうる法人情報の創作禁止に注意）。
@@ -39,33 +39,46 @@ GitHub アカウント決定 → リポジトリ作成 → ローカルから pu
 
 ## 2-A. gh CLI で作成する場合（推奨・最速）
 
-```bash
+> **注意**: PowerShell では `\` による行継続は使えない。下記は **すべて 1 行で** 貼り付けて実行する。
+> bash/zsh の場合のみ `\` 連結が使える。
+
+### PowerShell（Windows・推奨）
+
+```powershell
 # 0) gh が未インストールなら https://cli.github.com からインストール
 
 # 1) 認証
 gh auth login
-#   → GitHub.com → HTTPS → Login with a web browser
+#   → GitHub.com → HTTPS → Yes → Login with a web browser
 
-# 2) リポジトリ作成 + 初回 push（カレントが refasta-docs-tools）
+# 2) ディレクトリ移動 → git 初期化 → 初回コミット
 cd C:/Users/USER/Documents/Claude/Projects/sugiOfficialGASCreateProject
-
-# 既存ファイルを git 管理下に
 git init -b main
 git add .
 git commit -m "feat: initial commit - 便利ツール by Sugi v1.0.0"
 
-# Public で作成し remote を設定し push
+# 3) Private で作成し remote を設定し push（1 行）
+gh repo create refasta-docs-tools --private --description "便利ツール by Sugi - Refasta社内向け Google ドキュメント Editor Add-on" --source . --remote origin --push
+
+# 4) Discussions を有効化（公式スレッド用）
+gh repo edit --enable-discussions
+
+# 5) main ブランチ保護（1 行・OWNER は自分の GitHub アカウント名に置換）
+gh api repos/<OWNER>/refasta-docs-tools/branches/main/protection -X PUT -F required_pull_request_reviews.required_approving_review_count=1 -F enforce_admins=false -F required_status_checks=null -F restrictions=null
+```
+
+### bash / zsh の場合（参考）
+
+```bash
 gh repo create refasta-docs-tools \
-  --public \
+  --private \
   --description "便利ツール by Sugi - Refasta社内向け Google ドキュメント Editor Add-on" \
   --source . \
   --remote origin \
   --push
 
-# 3) Discussions を有効化（公式スレッド用）
 gh repo edit --enable-discussions
 
-# 4) main ブランチ保護
 gh api repos/:owner/:repo/branches/main/protection \
   -X PUT \
   -F required_pull_request_reviews.required_approving_review_count=1 \
@@ -82,7 +95,7 @@ gh api repos/:owner/:repo/branches/main/protection \
 # 1) Web で空リポジトリを作成
 #    https://github.com/new
 #    Name: refasta-docs-tools
-#    Visibility: Public
+#    Visibility: Private
 #    "Add a README" などはチェックしない（既にローカルにあるため）
 
 # 2) ローカルから push
@@ -90,7 +103,7 @@ cd C:/Users/USER/Documents/Claude/Projects/sugiOfficialGASCreateProject
 git init -b main
 git add .
 git commit -m "feat: initial commit - 便利ツール by Sugi v1.0.0"
-git remote add origin https://github.com/★OWNER★/refasta-docs-tools.git
+git remote add origin https://github.com/KentaHighlow/refasta-docs-tools.git
 git push -u origin main
 
 # 3) GitHub Web UI で Settings → Features → Discussions を ON

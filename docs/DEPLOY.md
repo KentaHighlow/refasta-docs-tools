@@ -46,7 +46,7 @@ GitHub clone → clasp login → Apps Script 作成 → src/ を push
 
 ```bash
 # 1) リポジトリを取得
-git clone https://github.com/★OWNER★/refasta-docs-tools.git
+git clone https://github.com/KentaHighlow/refasta-docs-tools.git
 cd refasta-docs-tools
 npm install
 
@@ -134,7 +134,7 @@ npx clasp push
 | カテゴリ | Productivity |
 | 言語 | 日本語 |
 | サポート URL | GitHub リポジトリの Issues |
-| プライバシーポリシー URL | `https://github.com/★OWNER★/refasta-docs-tools/blob/main/PRIVACY.md`（後で作成） |
+| プライバシーポリシー URL | `https://github.com/KentaHighlow/refasta-docs-tools/blob/main/PRIVACY.md`（後で作成） |
 | 利用規約 URL | 同上 `TERMS.md`（後で作成） |
 
 > プライバシーポリシー / 利用規約は **Internal 配布でも入力必須**。簡易テンプレで OK（要確認: 法務確認推奨）。
@@ -187,7 +187,7 @@ npx clasp push
 > Refasta社内で使える「便利ツール by Sugi」を Google ドキュメント Add-on として公式化しました。
 > 任意のドキュメントで `拡張機能 → アドオン → 便利ツール by Sugi` から利用できます。
 > 機能: ① Markdown 太字変換 ② 見出しレベル繰り上げ。
-> 不具合・要望は GitHub Issues へ → https://github.com/★OWNER★/refasta-docs-tools/issues
+> 不具合・要望は GitHub Issues へ → https://github.com/KentaHighlow/refasta-docs-tools/issues
 
 ---
 

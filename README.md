@@ -2,6 +2,7 @@
 
 > 便利ツール by Sugi — Google ドキュメント用 Editor Add-on
 > Refasta（urlounge.co.jp）社内配布の公式 Add-on リポジトリ
+> Visibility: **Private**（Refasta 関係者のみ）
 
 ## 概要
 
@@ -43,7 +44,7 @@ refasta-docs-tools/
 ### 1. ローカルセットアップ
 
 ```bash
-git clone https://github.com/<ORG_OR_USER>/refasta-docs-tools.git
+git clone https://github.com/KentaHighlow/refasta-docs-tools.git
 cd refasta-docs-tools
 npm install
 npx clasp login          # urlounge.co.jp の Google アカウントで
